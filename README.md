@@ -25,17 +25,3 @@ A simple Flutter app that allows **multiple users** to log in and maintain their
 
 ### Counter Page
 ![Counter Page](https://via.placeholder.com/400x800?text=Counter+Page)
-
----
-
-## Getting Started
-
-### Prerequisites
-- Flutter SDK  
-- Android Studio / VS Code  
-- Dart >= 3.0  
-
-### Installation
-1. Clone the repository:
-```bash
-git clone https://github.com/your-username/riverpod-counter-app.git
