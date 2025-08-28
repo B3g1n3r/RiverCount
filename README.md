@@ -16,12 +16,8 @@ A simple Flutter app that allows **multiple users** to log in and maintain their
 ---
 
 ## Screenshots
-
-### Login Page
-![Login Page]([https://via.placeholder.com/400x800?text=Login+Page](https://github.com/B3g1n3r/RiverCount/blob/main/samples/counter.png))
-
-### Sign Up Page
-![Sign Up Page](https://via.placeholder.com/400x800?text=Sign+Up+Page)
-
-### Counter Page
-![Counter Page](https://via.placeholder.com/400x800?text=Counter+Page)
+<p float="left">
+  <img src="https://github.com/B3g1n3r/RiverCount/blob/main/samples/counter.png" width="200" />
+  <img src="https://github.com/B3g1n3r/RiverCount/blob/main/samples/login.png" width="200" />
+  <img src="https://github.com/B3g1n3r/RiverCount/blob/main/samples/signup.png" width="200" />
+</p>
