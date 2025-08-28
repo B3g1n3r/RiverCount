@@ -66,52 +66,52 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
                   SizedBox(
                     width: double.infinity,
                     height: 48,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.blueAccent,
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      child: Center(
-                        child: GestureDetector(
-                          onTap: loading
-                              ? null
-                              : () async {
-                                  setState(() {
-                                    error = '';
-                                    loading = true;
-                                  });
-                                  if (usernameController.text.isEmpty ||
-                                      passwordController.text.isEmpty) {
-                                    setState(() {
-                                      error = 'Both fields are required';
-                                      loading = false;
-                                    });
-                                    return;
-                                  }
+                    child: GestureDetector(
+                      onTap: loading
+                          ? null
+                          : () async {
+                              setState(() {
+                                error = '';
+                                loading = true;
+                              });
+                              if (usernameController.text.isEmpty ||
+                                  passwordController.text.isEmpty) {
+                                setState(() {
+                                  error = 'Both fields are required';
+                                  loading = false;
+                                });
+                                return;
+                              }
 
-                                  final success = await register(
-                                    usernameController.text,
-                                    passwordController.text,
-                                    ref,
-                                  );
+                              final success = await register(
+                                usernameController.text,
+                                passwordController.text,
+                                ref,
+                              );
 
-                                  setState(() {
-                                    loading = false;
-                                  });
+                              setState(() {
+                                loading = false;
+                              });
 
-                                  if (success) {
-                                    showSnackBar('Account created! Logging in...');
-                                    Navigator.of(context).pushReplacement(
-                                      MaterialPageRoute(
-                                          builder: (_) => const CounterPage()),
-                                    );
-                                  } else {
-                                    setState(() {
-                                      error = 'User already exists';
-                                    });
-                                    showSnackBar(error, error: true);
-                                  }
-                                },
+                              if (success) {
+                                showSnackBar('Account created! Logging in...');
+                                Navigator.of(context).pushReplacement(
+                                  MaterialPageRoute(
+                                      builder: (_) => const CounterPage()),
+                                );
+                              } else {
+                                setState(() {
+                                  error = 'User already exists';
+                                });
+                                showSnackBar(error, error: true);
+                              }
+                            },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.blueAccent,
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        child: Center(
                           child: loading
                               ? const CircularProgressIndicator(
                                   color: Colors.white, strokeWidth: 2)
@@ -127,15 +127,11 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
                       ),
                     ),
                   ),
-
                   if (error.isNotEmpty) ...[
                     const SizedBox(height: 12),
-                    Text(error,
-                        style: const TextStyle(color: Colors.red)),
+                    Text(error, style: const TextStyle(color: Colors.red)),
                   ],
-
                   const SizedBox(height: 12),
-
                   TextButton(
                     onPressed: () {
                       Navigator.pop(context);
