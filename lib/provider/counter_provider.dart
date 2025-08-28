@@ -33,6 +33,5 @@ class CounterNotifier extends StateNotifier<int> {
   }
 }
 
-// Family allows separate counters per user
 final counterProvider = StateNotifierProvider.family<CounterNotifier, int, String>(
     (ref, username) => CounterNotifier(username));
