@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../provider/auth_provider.dart';
 import 'counter_page.dart';
@@ -95,6 +96,7 @@ class _SignUpPageState extends ConsumerState<SignUpPage> {
 
                               if (success) {
                                 showSnackBar('Account created! Logging in...');
+                                // ignore: use_build_context_synchronously
                                 Navigator.of(context).pushReplacement(
                                   MaterialPageRoute(
                                       builder: (_) => const CounterPage()),

@@ -1,10 +1,13 @@
 import 'package:bytelogik_assessment/pages/counter_page.dart';
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../provider/auth_provider.dart';
 import 'signup_page.dart';
 
 class LoginPage extends ConsumerStatefulWidget {
+  const LoginPage({super.key});
+
   @override
   ConsumerState<LoginPage> createState() => _LoginPageState();
 }
@@ -96,6 +99,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
 
                                 if (ref.read(authProvider) != null) {
                                   Navigator.pushReplacement(
+                                    // ignore: use_build_context_synchronously
                                     context,
                                     MaterialPageRoute(
                                         builder: (_) => const CounterPage()),
@@ -139,11 +143,11 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => SignUpPage()));
+                              builder: (context) => const SignUpPage()));
                     },
                     child: RichText(
-                        text: TextSpan(
-                            text: "Don\'t have an account?",
+                        text: const TextSpan(
+                            text: "Don't have an account?",
                             style: TextStyle(color: Colors.black),
                             children: [
                           TextSpan(
